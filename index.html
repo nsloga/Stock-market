@@ -3,306 +3,216 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Market</title>
-<center>
-    <h1 style="color: red;">WELCOME TO STOCK MARKET</h1>
-    <h2>Your Beginner-Friendly Guide to Understanding the Stock Market</h2>
-</center>
-<P class="P">Start your journey into the world of investing and trading with simple, clear, and essential knowledge. Whether you're a complete beginner or exploring stock market basics, this platform helps you build a strong foundation before entering the market.
-</P>
-<h2 style="color: blue;">What is Stock Maarket</h2>
-  <div class="phase1">
-    The stock market is a platform where people buy and sell ownership in companies, called shares. It connects investors with businesses and allows you to grow your wealth over time.
+  <title>Stock Market Guide</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('bull.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .page { 
+      display: none; 
+      padding: 50px 20px;
+    }
+
+    .active { 
+      display: block; 
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 2px solid cyan;
+      background-color: #222;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: cyan;
+      color: black;
+    }
+
+    .phase1 {
+      background-color: rgba(0, 255, 51, 0.2);
+      border: 2px solid cyan;
+      padding: 10px;
+      margin: 10px auto;
+      max-width: 600px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .toggle-box {
+      display: none;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px auto;
+      max-width: 600px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    h1, h2 {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- FRONT PAGE -->
+<div id="frontPage" class="page active">
+  <img src="bull.gif" alt="Loading..." style="width:200px; display:block; margin: 0 auto;" />
+  <h1>WELCOME TO TRADESMART</h1>
+  <h2 style="color: lightyellow;">LEARN</h2>
+  <h2 style="color: skyblue;">ANALYZE</h2>
+  <h2 style="color: darkgray;">PREDICT</h2>
+  <button onclick="showNextPage()">Go to Learn ➜</button>
 </div>
-<button onclick="togglePara()">Key Concepts:</button>
-<p id="myPara" style="display:none; color: blue;">
-Stocks / Shares - Ownership in a company<br>
 
-Stock Exchange - NSE, BSE<br>
+<!-- SECOND PAGE -->
+<div id="nextPage" class="page">
+  <h1 style="color: red;">WELCOME TO STOCK MARKET</h1>
+  <h2 style="color: #FFFF00;">Your Beginner-Friendly Guide to Understanding the Stock Market</h2>
+  <h2 style="color: white;">Start your journey into the world of investing and trading with simple, clear, and essential knowledge.</h2>
 
-Broker - Zerodha, Groww, Upstox<br>
+  <h2 style="color: blue;">What is Stock Market?</h2>
+  <div class="phase1">
+    The stock market is a platform where people buy and sell ownership in companies,
+    called shares. It connects investors with businesses and allows you to grow
+    your wealth over time.
+  </div>
 
-Orders - Buy, Sell, Market Order,LimitOrder<br>
-</p>
+  <!-- Toggle Buttons and Boxes -->
+  <button onclick="showBox('box1')">Key Concepts:</button>
+  <div id="box1" class="toggle-box">
+    Stocks / Shares - Ownership in a company<br>
+    Stock Exchange - NSE, BSE<br>
+    Broker - Zerodha, Groww, Upstox<br>
+    Orders - Buy, Sell, Market Order, Limit Order<br>
+  </div>
 
-<script>
-  function togglePara() {
-    var p = document.getElementById("myPara");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-   }
-}
-</script><br>
-<button onclick="togglePara1()"> Types of Market Participants</button>
-<p id="myPara1" style="display:none;">
-Understand who participates:<br>
+  <button onclick="showBox('box2')">Types of Market Participants</button>
+  <div id="box2" class="toggle-box">
+    Retail Traders<br>
+    Investors<br>
+    Institutional Investors (FIIs / DIIs)<br>
+    Brokers<br>
+    Each group affects market movement differently.<br>
+  </div>
 
-Retail Traders<br>
+  <button onclick="showBox('box3')">Types of Trading Styles</button>
+  <div id="box3" class="toggle-box">
+    Intraday Trading - Buy & sell same day<br>
+    Swing Trading - Hold for days/weeks<br>
+    Long-Term Investing - Hold for years<br>
+    Scalping - Quick trades (advanced)<br>
+    Beginners should start with long-term investing or swing trading.<br>
+  </div>
 
-Investors<br>
+  <button onclick="showBox('box4')">Core Market Concepts</button>
+  <div id="box4" class="toggle-box">
+    Bull Market - Market rising<br>
+    Bear Market - Market falling<br>
+    Volume - Activity in the stock<br>
+    Volatility - Speed of market movement<br>
+    Market Cap - Large, Mid, Small-cap<br>
+    Bid / Ask Price<br>
+    Stop Loss (SL) - Protect your capital<br>
+  </div>
 
-Institutional Investors (FIIs / DIIs)<br>
+  <button onclick="showBox('box5')">Technical Analysis</button>
+  <div id="box5" class="toggle-box">
+    Candlesticks (Hammer, Doji, Engulfing)<br>
+    Support & Resistance<br>
+    Trendlines<br>
+    Chart Patterns (Triangles, Wedges, Double Top)<br>
+    Indicators: RSI, MACD, Moving Averages (20,50,200), Volume<br>
+  </div>
 
-Brokers<br>
+  <button onclick="showBox('box6')">Fundamental Analysis Basics</button>
+  <div id="box6" class="toggle-box">
+    Revenue & Net Profit<br>
+    P/E Ratio<br>
+    Book Value<br>
+    Debt Levels<br>
+    Promoter Holding<br>
+    Return on Equity (ROE)<br>
+    Use tools like Screener.in, Moneycontrol, and NSE India.<br>
+  </div>
 
-Each group affects market movement differently.<br>
-</p>
+  <button onclick="showBox('box7')">Risk Management</button>
+  <div id="box7" class="toggle-box">
+    Always use Stop Loss<br>
+    Avoid risking more than 1-2% per trade<br>
+    Don't overtrade<br>
+    Trade with a plan, not emotions<br>
+  </div>
 
-<script>
-  function togglePara1() {
-    var p = document.getElementById("myPara1");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-   }
-}
-</script><br>
-<button onclick="togglePara3()">Types of Trading Styles</button>
+  <button onclick="showBox('box8')">Trading Psychology</button>
+  <div id="box8" class="toggle-box">
+    Fear, Greed, FOMO, Overconfidence, Revenge trading<br>
+    Emotional discipline = Consistent results.<br>
+  </div>
 
-<p id="myPara3" style="display:none;">
+  <button onclick="showBox('box9')">Tools You Must Know</button>
+  <div id="box9" class="toggle-box">
+    TradingView - Chart analysis<br>
+    Broker App - Zerodha / Groww<br>
+    Screener.in Company analysis<br>
+    NSE India Official market data<br>
+    MoneyControl - News & updates<br>
+  </div>
 
+  <button onclick="showBox('box10')">Start Practicing</button>
+  <div id="box10" class="toggle-box">
+    Do paper trading<br>
+    Backtest strategies<br>
+    Use small capital<br>
+    Follow daily market news<br>
+  </div>
 
-Choose a style that fits your learning:<br>
-
-Intraday Trading - Buy & sell same day<br>
-
-Swing Trading - Hold for days/weeks<br>
-
-Long-Term Investing - Hold for years<br>
-
-Scalping - Quick trades (advanced)<br>
-
-Beginners should start with long-term investing or swing trading.<br>
-</p>
-<script>
-  function togglePara3() {
-    var p = document.getElementById("myPara3");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara4()">Core Market Concepts</button>
-
-<p id="myPara4" style="display:none;">
-
-Before entering the market, learn these basics:<br>
-
-Bull Market - Market rising<br>
-
-Bear Market - Market falling<br>
-
-Volume - Activity in the stock<br>
-
-Volatility - Speed of market movement<br>
-
-Market Cap - Large, Mid, Small-cap<br>
-
-Bid / Ask Price<br>
-
-Stop Loss (SL) - Protect your capital<br>
-</p>
-
-<script>
-  function togglePara4() {
-    var p = document.getElementById("myPara4");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara5()"> Technical Analysis</button>
-
-<p id="myPara5" style="display:none;">
-
-Basics<br>
-
-This helps you understand chart movements and price behavior.<br>
-
-Learn:<br>
-
-Candlesticks (Hammer, Doji, Engulfing)<br>
-
-Support & Resistance<br>
-
-Trendlines<br>
-
-Chart Patterns (Triangles, Wedges, Double Top)
-<br>
-Indicators:
-<br>
-RSI<br>
-
-MACD<br>
-
-Moving Averages (20, 50, 200<br>)
-
-Volume<br>
-</p>
+  <br>
+  <button onclick="showFrontPage()">⬅ Back to Home</button>
+</div>
 
 <script>
-  function togglePara5() {
-    var p = document.getElementById("myPara5");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara6()">Fundamental Analysis Basics</button>
+  function showNextPage() {
+    document.getElementById("frontPage").classList.remove("active");
+    document.getElementById("nextPage").classList.add("active");
+  }
 
-<p id="myPara6" style="display:none;">
+  function showFrontPage() {
+    document.getElementById("nextPage").classList.remove("active");
+    document.getElementById("frontPage").classList.add("active");
+  }
 
-This helps you understand company strength.<br>
-
-Study:<br>
-
-Revenue & Net Profit<br>
-
-P/E Ratio<br>
-
-Book Value<br>
-
-Debt Levels<br>
-
-Promoter Holding<br>
-
-Return on Equity (ROE)<br>
-
-Use tools like Screener.in, Moneycontrol, and NSE India.<br>
-</p>
-
-<script>
-  function togglePara6() {
-    var p = document.getElementById("myPara6");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara7()">Risk Management</button>
-
-<p id="myPara7" style="display:none;">
-Risk management is more important than profit.<br>
-
-Always use Stop Loss<br>
-
-Avoid risking more than 1-2% per trade<br>
-
-Don't overtrade<br>
-
-Trade with a plan, not emotions<br>
-</p>
-
-<script>
-  function togglePara7() {
-    var p = document.getElementById("myPara7");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara8()"> Trading Psychology</button>
-
-<p id="myPara8" style="display:none;">
-
-A successful trader controls:<br>
-
-Fear<br>
-
-Greed<br>
-
-FOMO<br>
-
-Overconfidence<br>
-
-Revenge trading<br>
-
-Emotional discipline = Consistent results.<br>
-</p>
-
-<script>
-  function togglePara8() {
-    var p = document.getElementById("myPara8");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara9()">Tools You Must Know</button>
-
-<p id="myPara9" style="display:none;">
-
-Your essential toolkit:<br>
-
-TradingView - Chart analysis<br>
-
-Broker App - Zerodha / Groww<br>
-
-Screener.in Company analysis<br>
-
-NSE India Official market data<br>
-
-MoneyControl - News & updates<br>
-</p>
-
-<script>
-  function togglePara9() {
-    var p = document.getElementById("myPara9");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
-  }
-</script><br>
-<button onclick="togglePara10()"> Start Practicing</button>
-
-<p id="myPara10" style="display:none;">
-
-Before real trading:<br>
-
-Do paper trading<br>
-
-Backtest strategies<br>
-
-Use small capital<br>
-
-Follow daily market news<br>
-</p>
-
-<script>
-  function togglePara10() {
-    var p = document.getElementById("myPara10");
-    if (p.style.display === "none") {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-   }
-}
+  function showBox(id) {
+    // Hide all boxes
+    var boxes = document.querySelectorAll('.toggle-box');
+    boxes.forEach(box => {
+      if(box.id !== id) box.style.display = 'none';
+    });
+    // Toggle the selected box
+    var selected = document.getElementById(id);
+    selected.style.display = (selected.style.display === 'block') ? 'none' : 'block';
+  }
 </script>
 
-</head>
+</body>
 </html>
-<style>
-    .phase1{
-        background-color: aqua;
-         border: 2px salmon;
-         padding: 10px;
-         margin: 10px;
-    }
-</style>
